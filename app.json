@@ -1,5 +1,6 @@
 {
   "expo": {
+    "jsEngine": "hermes",
     "name": "personal-info",
     "slug": "personal-info",
     "version": "1.0.0",
