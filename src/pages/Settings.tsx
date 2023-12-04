@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Platform } from 'react-native';
 import { View, Text } from '../components/StyledComponents';
 import { AuthContext } from '../providers/Auth';
 import { Appbar } from 'react-native-paper';
@@ -10,11 +11,13 @@ export const Settings = () => {
   return (
     <View>
       <Appbar.Header>
-        <Appbar.BackAction
-          onPress={() => {
-            navigation.goBack();
-          }}
-        />
+        {Platform.OS === 'ios' && (
+          <Appbar.BackAction
+            onPress={() => {
+              navigation.goBack();
+            }}
+          />
+        )}
         <Appbar.Content title='Settings' />
         <Appbar.Action icon={isLoading ? 'loading' : 'logout'} onPress={logout} />
       </Appbar.Header>
