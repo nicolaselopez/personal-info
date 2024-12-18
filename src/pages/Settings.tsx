@@ -5,9 +5,14 @@ import { AuthContext } from '../providers/Auth';
 import { Appbar } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 
+// Settings component to display the settings screen of the app
 export const Settings = () => {
+  // Use AuthContext to get the current user and handle authentication
   const { user, logout, isLoading } = useContext(AuthContext);
-  const navigation = useNavigation(); // Initialize the navigation object
+  
+  // Initialize the navigation object
+  const navigation = useNavigation(); 
+  
   return (
     <View>
       <Appbar.Header>
