@@ -3,13 +3,16 @@ import { Text, View, TextInput, Button } from '../components/StyledComponents';
 import { AuthContext } from '../providers/Auth';
 import { HelperText } from 'react-native-paper';
 
+// SignIn component to handle user authentication
 export const SignIn = () => {
   const { login, isLoading } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // State management for form input errors
   const [errors, setErrors] = useState({} as { email?: string; password?: string });
 
+  // Validation logic for form inputs
   const validate = () => {
     // email regex validation
     const emailRegex = /\S+@\S+\.\S+/;

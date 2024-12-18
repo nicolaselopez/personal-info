@@ -5,9 +5,12 @@ import { View, ScrollView } from '../components/StyledComponents';
 import { ProfileAvatar } from '../components/ProfileAvatar';
 import { ProfileForm } from '../components/ProfileForm';
 
+// Home component to display the main screen of the app
 export const Home = () => {
+  // Use AuthContext to get the current user
   const { user } = useContext(AuthContext);
 
+  // State management for the snackbar
   const [snackBarVisible, setSnackBarVisible] = React.useState(false);
 
   return (
